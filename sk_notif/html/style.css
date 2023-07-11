@@ -1,0 +1,235 @@
+body {
+  background-size: cover;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.5s;
+  margin: 0;
+  padding: 0;
+}
+
+.hud {
+  filter: hue-rotate(var(--hud-hue-rotate));
+}
+
+.body-visible {
+  opacity: 1 !important;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.announce {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -150px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.announce-visible {
+  top: 0px;
+  opacity: 1;
+}
+
+.announce .wrapper {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.announce .wrapper .container {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+  z-index: 10;
+  filter: hue-rotate(var(--announce-hue-rotate));
+}
+
+.announce .glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(annonce-back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+.announce .wrapper .container .title {
+  font-style: italic;
+  text-transform: uppercase;
+  margin-top: 45px;
+}
+
+.announce .wrapper .container .divider {
+  background-color: var(--main-color);
+  width: 200px;
+  height: 5px;
+  margin-top: 5px;
+  border-radius: 2px;
+  box-shadow: 0px 0px 10px 0px var(--main-glow);
+}
+
+.announce .wrapper .container .desc {
+  position: absolute;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  margin-left: -32px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  width: 260px;
+}
+
+.notify .wrapper {
+  display: flex;
+  text-transform: uppercase;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notify .container {
+  position: absolute;
+  bottom: 250px;
+  left: 30px;
+  width: 300px;
+  filter: hue-rotate(var(--notify-hue-rotate));
+}
+
+.notification-visible {
+  opacity: 1 !important;
+  margin-left: 0px !important;
+}
+
+.notification {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.541);
+  margin-left: -100px;
+  width: 250px;
+  height: 75%;
+  opacity: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/014/396/449/original/comic-style-bell-notification-icon-with-transparent-background-file-png.png');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 30px auto;
+  padding: 10px;
+}
+
+.notification::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(4, 59, 122);
+  animation: progress 5s linear;
+}
+
+@keyframes progress {
+  0% {
+    width: 100%;
+    right: 0;
+  }
+  100% {
+    width: 0;
+    right: 100%;
+  }
+}
+
+.notification .divider {
+  position: absolute;
+  border-radius: 2px;
+  height: 100%;
+  width: 5px;
+}
+
+.notification .title {
+  color: white;
+  font-style: italic;
+  margin-left: 10px;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.notification .desc {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: none;
+  font-style: normal;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.gps {
+  opacity: 1;
+  transition: all 0.5s;
+}
+
+.gps .container {
+  position: absolute;
+  left: 350px;
+  bottom: 10px;
+  background-color: rgba(12, 10, 10, 0.801);
+  height: 55px;
+  width: auto;
+  filter: hue-rotate(var(--gps-hue-rotate));
+}
+
+.gps .wrapper {
+  color: var(--main-color);
+  display: flex;
+  flex-direction: row;
+}
+
+.gps .container i {
+  line-height: 45px;
+  font-size: 25px;
+}
+
+.gps .divider {
+  position: absolute;
+  border-radius: 2px;
+
+  top: 3px;
+  left: -18px;
+  height: 40px;
+  width: 5px;
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 10px 0px var(--main-glow);
+}
+
+.gps .container .title {
+  position: relative;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-left: 3px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.gps .container .desc {
+  position: relative;
+  margin-top: -10px;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+}
+
+
